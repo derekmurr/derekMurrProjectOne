@@ -1,0 +1,654 @@
+/* ======== RESETS AND SETUP STARTS ======== */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 110px 0;
+}
+
+/* ======== RESETS AND SETUP ENDS ======== */
+
+/* ======== VARIABLES START ======== */
+
+:root {
+  --reddishOrange: #e85b26;
+  --lightGrey: #f4f4f4;
+  --mediumGrey: #d8d8d8;
+  --darkerGrey: #1f2022;
+  --lightNavy: #186684;
+  --paleLilac89: rgba(227, 228, 234, 0.89);
+  --backgroundWhite: #fcfcfc;
+}
+
+/* ======== VARIABLES ENDS ======== */
+
+/* ======== TYPOGRAPHY STARTS ======== */
+
+/* font-family: 'Catamaran', sans-serif; */
+/* font-family: 'Nova Flat', cursive; */
+
+body {
+  background-color: var(--backgroundWhite);
+  font-family: 'Catamaran', sans-serif;
+  font-size: 125%;
+  font-weight: 400;
+}
+
+.skipLink {
+  position: absolute;
+  top: -500px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+
+  width: 15em;
+  margin: 0 auto;
+  padding: 20px;
+
+  background-color: var(--reddishOrange);
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.skipLink:focus {
+  top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Nova Flat', cursive;
+}
+
+p {
+  color: var(--darkerGrey);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+
+  font-size: 7.9vw;
+  line-height: 0.82;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  color: var(--lightNavy);
+}
+
+h3 {
+  color: var(--reddishOrange);
+}
+
+.center {
+  text-align: center;
+}
+
+a, button {
+  transition: all 0.3s ease;
+}
+
+.mainNavigationLink {
+  color: var(--lightNavy);
+  font-family: 'Nova Flat', cursive;
+  text-decoration: none;
+}
+
+.mainNavigationLink:hover,
+.mainNavigationLink:focus, 
+.footerNavigationLink:hover,
+.footerNavigationLink:focus {
+  color: var(--reddishOrange);
+}
+
+.readMore {
+  display: block;
+
+  width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+  padding: 12px 14px;
+
+  border: 3px solid var(--reddishOrange);
+  color: var(--lightNavy);
+  font-family: 'Nova Flat', cursive;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.readMore:hover,
+.readMore:focus {
+  color: var(--backgroundWhite);
+  background-color: var(--reddishOrange);
+}
+
+.socialLinks a {
+  color: var(--reddishOrange);
+  font-size: 1.2rem;
+}
+
+.socialLinks a:hover,
+.socialLinks a:focus {
+  color: var(--lightNavy);
+}
+
+.footerNavigationLink {
+  color: var(--darkerGrey);
+  font-family: 'Nova Flat', cursive;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.footerContactBlock p {
+  margin: 0;
+
+  line-height: 1.45;
+}
+
+.footerContactBlock a {
+  color: var(--darkerGrey);
+  text-decoration: none;
+}
+
+.footerContactBlock a:hover, 
+.footerContactBlock a:focus {
+  color: var(--reddishOrange);
+  text-decoration: underline;
+}
+
+.footerCopyright p {
+  color: var(--mediumGrey);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.61;
+}
+
+/* ======== TYPOGRAPHY ENDS ======== */
+
+/* ======== HEADER STARTS ======== */
+
+header {
+  position: relative;
+  height: 50vw;
+
+  padding: 20px;
+
+  background-image: url("../assets/headerBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headerTitle {
+  position: absolute;
+  right: 20%;
+  bottom: 15%;
+  width: 33.9vw;
+
+  padding: 22px 15px;
+
+  background-color: var(--paleLilac89);
+}
+
+.mainNavigation {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  text-align: center;
+}
+
+.mainNavigation li {
+  display: inline-block;
+
+  margin: 0px 17px;
+}
+
+.hamburgerNav {
+  display: none;
+  float: right;
+
+  color: var(--lightNavy);
+}
+
+.hamburgerNav:hover g,
+.hamburgerNav:focus g {
+  stroke: var(--reddishOrange);
+}
+
+.socialWrapper {
+  position: absolute;
+  right: 40px;
+  bottom: 40%;
+}
+
+.socialLinks {
+  list-style-type: none;
+  text-align: center;
+}
+
+/* ======== HEADER ENDS ======== */
+
+/* ======== FEATURES START ======== */
+
+.feature {
+  position: relative;
+}
+
+.featureBackground {
+  /* Each feature has an image but it's just decorative, so we'll make them backgrounds */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.featureLeftBackground {
+  /* For the feature on the left, the image takes up the right half of the section */
+  right: 0;
+  left: 50%;
+
+  background-image: url("../assets/specializeIn.jpg");
+}
+
+.featureRightBackground {
+  /* For the feature on the right, the image takes up the left half of the section */
+  right: 50%;
+  left: 0;
+  background-image: url("../assets/footCare.jpg");
+}
+
+.featureContent {
+  width: calc(50% - 30px);
+  /* Feature content takes half the wrapper width, minus a bit for the gutter between copy and image */
+}
+
+.featureLeftContent {
+  float: left;
+}
+
+.featureRightContent {
+  float: right;
+}
+
+/* ======== FEATURES END ======== */
+
+/* ======== GIVING BACK SECTION STARTS ======== */
+
+.givingBack {
+  background-color: var(--lightGrey);
+}
+
+.givingBackImage {
+  float: left;
+  width: 20%;
+  margin-right: 40px;
+}
+
+.givingBackContent {
+  float: left;
+  width: calc(80% - 40px);
+}
+
+/* ======== GIVING BACK SECTION ENDS ======== */
+
+/* ======== SITE AREAS SECTION STARTS ======== */
+
+.siteAreas {
+  padding: 106px 0;
+
+  background-image: url("../assets/sectionBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.siteAreasLinks {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px;
+
+  background-color: var(--lightGrey);
+  list-style: none;
+}
+
+.siteAreasLinks li {
+  float: left;
+  width: 33.33%;
+
+  text-align: center;
+}
+
+.siteAreasIcon {
+  display: block;
+
+  color: var(--reddishOrange);
+  font-size: 3rem;
+}
+
+.siteAreasLabel {
+  display: block;
+
+  color: var(--lightNavy);
+  text-decoration: none;
+  font-family: 'Nova Flat', cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ======== SITE AREAS SECTION ENDS ======== */
+
+/* ======== THE GRAM SECTION STARTS ======== */
+
+.theGram {
+  padding: 95px 0 110px;
+}
+
+.instagramWrapper {
+  text-align: center;
+}
+
+.instagramPhoto {
+  float: left;
+  width: calc(100% / 3 - 30px);
+  /* 3 images, taking up 1/3 width each minus total margin (90) divided by 3 */
+  margin: 0;
+}
+
+.instagramPhoto:nth-of-type(2) {
+  margin-left: 45px;
+  margin-right: 45px;
+  /* adding side margin to the middle image only so the first and last are flush with the wrapper */
+}
+
+/* ======== THE GRAM SECTION ENDS ======== */
+
+/* ======== FOOTER STARTS ======== */
+
+footer {
+  margin: 0;
+  padding-top: 100px;
+
+  background-color: var(--lightGrey);
+}
+
+.footerNavigation {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  text-align: center;
+}
+
+.footerNavigation ul {
+  margin: 0 auto 32px;
+  padding: 0;
+}
+
+.footerNavigation li {
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+.footerContactBlock {
+  float: left;
+  margin-bottom: 100px;
+}
+
+.footerNewsletterBlock {
+  float: right;
+  width: 50%;
+}
+
+.footerEmail {
+  float: left;
+  width: 70%;
+  padding: 9px 32px 10px;
+
+  border: 0;
+  background-color: var(--backgroundWhite);
+  color: var(--darkerGrey);
+  font-family: 'Catamaran', sans-serif;
+  font-size: 1rem;
+}
+
+.footerNewsletterSubmit {
+  float: left;
+  width: 30%;
+  padding: 9px 16px 10px;
+  
+  border: 3px solid var(--reddishOrange);
+  background-color: var(--lightNavy);
+  color: var(--backgroundWhite);
+  font-family: 'Nova Flat', cursive;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.footerNewsletterSubmit:hover,
+.footerNewsletterSubmit:focus {
+  background-color: var(--reddishOrange);
+  border: 3px solid var(--lightNavy);
+}
+
+.footerCopyright {
+  background-color: #000000;
+  padding: 2px 0;
+}
+
+/* ======== FOOTER ENDS ======== */
+
+/* ======== MEDIA QUERIES BEGIN ======== */
+
+@media (max-width: 940px) {
+  /* This one's small, just to tighten up the vertical space a touch */
+  section {
+    padding: 60px 0;
+  }
+
+  footer {
+    padding-top: 60px;
+  }
+
+  /* and stack our newsletter sign-up form so it still looks OK */
+
+  .footerEmail,
+  .footerNewsletterSubmit {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footerEmail {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Let's center & stack our social media links */
+  .socialLinks li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  .socialWrapper {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+    top: 40px;
+    padding: 0;
+  }
+
+  .headerTitle {
+    /* wrapper is 95% wide, so half the remainder is 2.5 to stick this on the right sitewide margin */
+    right: 2.5%;
+    bottom: 5%;
+    /* Because the font size stops shrinking at this breakpoint, the width needs to be static here too; 261 is where it winds up at this size. It has to be this wide to force the line break after "foot" without using a non-semantic br tag in the html */
+    width: 261px;
+  }
+
+  h1 {
+    /* Font size can stop shrinking with the viewport now */
+    font-size: 3.75rem;
+  }
+
+  /* Keep the image & copy in the Giving Back section looking proportional */
+  .givingBackImage {
+    width: 30%;
+  }
+
+  .givingBackContent {
+    width: calc(70% - 40px);
+  }
+
+  /* Center & stack the footer items  */
+  .footerContactBlock,
+  .footerNewsletterBlock {
+    float: none;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 650px) {
+  /* Swap out our nav bar for the hamburger menu */
+  header nav,
+  .socialWrapper {
+    display: none;
+  }
+
+  .hamburgerNav {
+    display: block;
+  }
+
+  /* Stack all content sections */
+  .featureContent {
+    width: 100%;
+    margin: 40px auto 50px;
+  }
+
+  .featureLeftContent, .featureRightContent {
+    float: none;
+    text-align: center;
+  }
+
+  .featureBackground,
+  .featureLeftBackground,
+  .featureRightBackground {
+    /* Change our feature images to be full-width and stack on top of the feature text */
+    position: relative;
+    height: 50vw;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .readMore {
+    margin: 25px auto 0;
+  }
+
+  section {
+    padding: 0;
+  }
+
+  .givingBackImage,
+  .givingBackContent {
+    float: none;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .givingBackContent {
+    margin-top: 50px;
+  }
+
+  .givingBack {
+    padding: 50px 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .siteAreas {
+    padding: 40px 0;
+  }
+
+  .siteAreasLinks {
+    width: 100%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    height: 150vw;
+    /* Switch to a portrait-ratio header that works better on mobile with a more suitable background image */
+    background-image: url("../assets/headerBackgroundMobile.jpg");
+  }
+
+  .headerTitle {
+    bottom: 20%;
+  }
+
+  .siteAreasLinks {
+    width: 60%;
+  }
+
+  .siteAreasLinks li {
+    float: none;
+    width: 100%;
+    margin: 30px auto 0;
+  }
+
+  .theGram {
+    padding: 60px 0 50px;
+  }
+
+  .instagramPhoto {
+    /* Only show 2 images now, 20px margin between them */
+    width: calc(50% - 10px);
+    margin: 0;
+  }
+
+  .instagramPhoto:nth-of-type(2) {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+
+  .instagramPhoto:last-of-type {
+    display: none;
+  }
+}
