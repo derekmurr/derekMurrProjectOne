@@ -82,7 +82,7 @@ h3 {
 p {
   color: var(--darkerGrey);
   font-size: 1rem;
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
 h1 {
@@ -292,7 +292,7 @@ header {
 }
 
 .featureContent {
-  width: calc(50% - 5vw);
+  width: calc(50% - 7vw);
   /* Feature content takes half the wrapper width, minus a bit for the gutter between copy and image */
 }
 
