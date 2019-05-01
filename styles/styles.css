@@ -432,6 +432,11 @@ footer {
   width: 50%;
 }
 
+input:required {
+  box-shadow:none;
+  /* eliminates a default formatting thing for required inputs on Windows */
+}
+
 .footerEmail {
   float: left;
   width: 70%;
